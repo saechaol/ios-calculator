@@ -15,11 +15,40 @@ class ViewController: UIViewController {
     let disabledButtonColor: UIColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
     let whiteColor: UIColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
     
+    var firstOperand: String!
+    var secondOperand: String!
+    var base: Base!
+    var operationPerformed: Bool! = false
+    
+    @IBOutlet weak var calculationDisplay: UILabel!
+    
+    @IBOutlet weak var HexBaseButton: UIButton!
+    @IBOutlet weak var DecBaseButton: UIButton!
+    @IBOutlet weak var OctBaseButton: UIButton!
+    @IBOutlet weak var BinBaseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+}
 
+enum Operation {
+    case addition
+    case subtraction
+    case division
+    case multiplication
+    case modulo
+    case and
+    case or
+    case xor
+}
+
+enum Base {
+    case DECIMAL
+    case BINARY
+    case HEXADECIMAL
+    case OCTAL
 }
 

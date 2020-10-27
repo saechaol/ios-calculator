@@ -103,6 +103,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="BinBaseButton" destination="aLl-bp-Eyu" id="ZQn-XD-Gdv"/>
+                        <outlet property="DecBaseButton" destination="D56-ua-Yyc" id="Vj8-y4-ZtZ"/>
+                        <outlet property="HexBaseButton" destination="kUV-M0-bPz" id="UtU-fb-PgS"/>
+                        <outlet property="OctBaseButton" destination="Hoy-hK-un0" id="n0h-5s-td1"/>
+                        <outlet property="calculationDisplay" destination="bHU-fX-rJj" id="w4N-ay-cA4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
