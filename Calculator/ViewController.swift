@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         if self.style == .default {
-            self.style = .lightContent
+          //  self.style = .lightContent
         }
         return self.style
     }
