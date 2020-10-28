@@ -15,6 +15,7 @@
 		419F1F11254740D500F686B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419F1F0F254740D500F686B4 /* LaunchScreen.storyboard */; };
 		419F1F1C254740D500F686B4 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F1F1B254740D500F686B4 /* CalculatorTests.swift */; };
 		419F1F27254740D500F686B4 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F1F26254740D500F686B4 /* CalculatorUITests.swift */; };
+		41F6414B25490C3E0045F91A /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F6414A25490C3E0045F91A /* AboutPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		419F1F22254740D500F686B4 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		419F1F26254740D500F686B4 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		419F1F28254740D500F686B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F6414A25490C3E0045F91A /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				419F1F0D254740D500F686B4 /* Assets.xcassets */,
 				419F1F0F254740D500F686B4 /* LaunchScreen.storyboard */,
 				419F1F12254740D500F686B4 /* Info.plist */,
+				41F6414A25490C3E0045F91A /* AboutPageViewController.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				419F1F09254740D200F686B4 /* ViewController.swift in Sources */,
 				419F1F05254740D200F686B4 /* AppDelegate.swift in Sources */,
 				419F1F07254740D200F686B4 /* SceneDelegate.swift in Sources */,
+				41F6414B25490C3E0045F91A /* AboutPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

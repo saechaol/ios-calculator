@@ -64,19 +64,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var NotButton: UIButton!
     @IBOutlet weak var SolveButton: UIButton!
     
+    var style: UIStatusBarStyle = .lightContent
     
-    /*
-     DEF DEL About
-     ABC MOD Div
-     789 AND Mul
-     456  OR Sub
-     123 XOR Add
-       0 Neg Solve
-     */
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if self.style == .default {
+            self.style = .lightContent
+        }
+        return self.style
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func changeStyle(_sender: UIButton) {
+        if self.style == .lightContent {
+            self.style = .default
+        } else {
+            self.style = .lightContent
+        }
+        setNeedsStatusBarAppearanceUpdate()
     }
 
 }
