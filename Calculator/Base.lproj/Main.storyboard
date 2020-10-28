@@ -27,7 +27,7 @@
                                             <constraint firstAttribute="height" constant="100" id="Wsd-cg-njP"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="102391" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-fX-rJj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-fX-rJj">
                                         <rect key="frame" x="0.0" y="100" width="390" height="93"/>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
@@ -43,9 +43,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUV-M0-bPz">
                                                         <rect key="frame" x="0.0" y="0.0" width="78" height="93"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="D56-ua-Yyc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="height" id="Jyx-mT-DKX"/>
-                                                        </constraints>
                                                         <state key="normal" title="HEX">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -84,10 +81,10 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="D56-ua-Yyc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="4OZ-Ti-JCJ"/>
-                                                    <constraint firstItem="aLl-bp-Eyu" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="4vN-rw-zHo"/>
-                                                    <constraint firstItem="b3Y-97-I3z" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="Z5z-VK-vkh"/>
-                                                    <constraint firstItem="Hoy-hK-un0" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="iD6-cB-oTd"/>
+                                                    <constraint firstItem="D56-ua-Yyc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$DecButtonWidthEqualsHexButtonWidth$" id="4OZ-Ti-JCJ"/>
+                                                    <constraint firstItem="aLl-bp-Eyu" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$BinButtonWidthEqualsHexButtonWidth$" id="4vN-rw-zHo"/>
+                                                    <constraint firstItem="b3Y-97-I3z" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$AllClearWidthEqualsBinButtonWidth$" id="Z5z-VK-vkh"/>
+                                                    <constraint firstItem="Hoy-hK-un0" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$OctButtonWidthEqualsHexButtonWidth$" id="iD6-cB-oTd"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-fE-RpV">
@@ -357,62 +354,62 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Jon-oP-K1O" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="2f6-ac-rhY"/>
-                                            <constraint firstItem="mOf-xL-x74" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="5UK-R3-reO"/>
-                                            <constraint firstItem="DhB-z7-p02" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="9qS-It-9ZC"/>
-                                            <constraint firstItem="5ED-yq-kCg" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="Avi-pa-g5u"/>
-                                            <constraint firstItem="9yD-3u-bBj" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" id="COV-Fy-5sm"/>
-                                            <constraint firstItem="3vX-4W-X25" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="D7W-Yh-1mi"/>
-                                            <constraint firstItem="tfN-EX-zHP" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="D9Q-pc-pf0"/>
-                                            <constraint firstItem="DIn-b4-LFz" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="DRR-wn-ogF"/>
-                                            <constraint firstItem="dLR-ke-bbx" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="Eez-H5-QcE"/>
-                                            <constraint firstItem="saq-Xl-xFA" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" id="FtE-7e-gfw"/>
-                                            <constraint firstItem="jVd-gn-MLb" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="Kjj-kW-8eW"/>
-                                            <constraint firstItem="wKz-Nk-tjC" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="LuB-HV-8rd"/>
-                                            <constraint firstItem="Dmm-Iw-OhC" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" id="M6p-ru-8gS"/>
-                                            <constraint firstItem="pHv-HT-cnP" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="N03-pg-8h9"/>
-                                            <constraint firstItem="y4A-9k-eHc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="NvT-pr-Qbx"/>
-                                            <constraint firstItem="rJm-j2-3np" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="Oaz-dB-VRd"/>
-                                            <constraint firstItem="I9u-Rw-IiU" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" id="OnG-SL-wb7"/>
-                                            <constraint firstItem="rf9-Ir-8jj" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="OuX-TR-557"/>
-                                            <constraint firstItem="5Kk-dx-9Uc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="PO3-uK-Mp6"/>
-                                            <constraint firstItem="fGA-mz-O9w" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="UOJ-ln-Fyf"/>
-                                            <constraint firstItem="1a5-cV-559" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="V65-Jv-L77"/>
-                                            <constraint firstItem="Meg-dM-nQr" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="YSs-jb-jrq"/>
-                                            <constraint firstItem="Zxd-hj-TtA" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="aLl-en-uYA"/>
-                                            <constraint firstItem="nsq-ZG-cm7" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" id="eU4-He-whB"/>
-                                            <constraint firstItem="utH-JH-tNU" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="iyO-9C-YXD"/>
-                                            <constraint firstItem="eOy-by-0Ds" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="lMo-5a-jbv"/>
-                                            <constraint firstItem="HYB-2S-V4b" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="ldq-55-xxh"/>
-                                            <constraint firstItem="uxG-Mx-Zkd" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="lhH-06-jrU"/>
-                                            <constraint firstItem="81P-km-4iH" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="mCs-s8-xyj"/>
-                                            <constraint firstItem="SdO-Ga-fVd" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="qwQ-xM-eCf"/>
-                                            <constraint firstItem="W8D-4Y-Dr6" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="rsz-2g-Gnk"/>
-                                            <constraint firstItem="Dea-fE-RpV" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" id="unC-7w-dc3"/>
-                                            <constraint firstItem="z3K-Pj-trg" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="vsS-9K-i7Y"/>
-                                            <constraint firstItem="UKy-vj-BKU" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" id="xN5-aa-3Sq"/>
+                                            <constraint firstItem="Jon-oP-K1O" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$SixWidthEqualsHexBaseWidth$" id="2f6-ac-rhY"/>
+                                            <constraint firstItem="mOf-xL-x74" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$OrWidthEqualsHexBaseWidth$" id="5UK-R3-reO"/>
+                                            <constraint firstItem="DhB-z7-p02" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$SolveWidthEqualsHexBaseWidth$" id="9qS-It-9ZC"/>
+                                            <constraint firstItem="5ED-yq-kCg" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$DeleteWidthEqualsHexBaseWidth$" id="Avi-pa-g5u"/>
+                                            <constraint firstItem="9yD-3u-bBj" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" identifier="$OrStackHeightEqualsHexStackHeight$" id="COV-Fy-5sm"/>
+                                            <constraint firstItem="3vX-4W-X25" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$HexFWidthEqualsHexBaseWidth$" id="D7W-Yh-1mi"/>
+                                            <constraint firstItem="tfN-EX-zHP" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$NegationWidthEqualsHexBaseWidth$" id="D9Q-pc-pf0"/>
+                                            <constraint firstItem="DIn-b4-LFz" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$HexEWidthEqualsHexBaseWidth$" id="DRR-wn-ogF"/>
+                                            <constraint firstItem="dLR-ke-bbx" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$MultiplicationWidthEqualsHexBaseWidth$" id="Eez-H5-QcE"/>
+                                            <constraint firstItem="saq-Xl-xFA" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" identifier="$XorStackHeightEqualsHexStackHeight$" id="FtE-7e-gfw"/>
+                                            <constraint firstItem="jVd-gn-MLb" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$HexBWidthEqualsHexBaseWidth$" id="Kjj-kW-8eW"/>
+                                            <constraint firstItem="wKz-Nk-tjC" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$EightWidthEqualsHexBaseWidth$" id="LuB-HV-8rd"/>
+                                            <constraint firstItem="Dmm-Iw-OhC" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" identifier="$NotStackHeightEqualsHexStackHeight$" id="M6p-ru-8gS"/>
+                                            <constraint firstItem="pHv-HT-cnP" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$XorWidthEqualsHexBaseWidth$" id="N03-pg-8h9"/>
+                                            <constraint firstItem="y4A-9k-eHc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$SevenWidthEqualsHexBaseWidth$" id="NvT-pr-Qbx"/>
+                                            <constraint firstItem="rJm-j2-3np" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$HexAWidthEqualsHexBaseWidth$" id="Oaz-dB-VRd"/>
+                                            <constraint firstItem="I9u-Rw-IiU" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" identifier="$ModStackHeightEqualsHexStackHeight$" id="OnG-SL-wb7"/>
+                                            <constraint firstItem="rf9-Ir-8jj" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$NineWidthEqualsHexBaseWidth$" id="OuX-TR-557"/>
+                                            <constraint firstItem="5Kk-dx-9Uc" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$HexCWidthEqualsHexBaseWidth$" id="PO3-uK-Mp6"/>
+                                            <constraint firstItem="fGA-mz-O9w" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$AboutWidthEqualsHexBaseWidth$" id="UOJ-ln-Fyf"/>
+                                            <constraint firstItem="1a5-cV-559" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$AndWidthEqualsHexBaseWidth$" id="V65-Jv-L77"/>
+                                            <constraint firstItem="Meg-dM-nQr" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$HexDWidthEqualsHexBaseWidth$" id="YSs-jb-jrq"/>
+                                            <constraint firstItem="Zxd-hj-TtA" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$FourWidthEqualsHexBaseWidth$" id="aLl-en-uYA"/>
+                                            <constraint firstItem="nsq-ZG-cm7" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" identifier="$AndStackHeightEqualsHexStackHeight$" id="eU4-He-whB"/>
+                                            <constraint firstItem="utH-JH-tNU" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$OneWidthEqualsHexBaseWidth$" id="iyO-9C-YXD"/>
+                                            <constraint firstItem="eOy-by-0Ds" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$DivisionWidthEqualsHexBaseWidth$" id="lMo-5a-jbv"/>
+                                            <constraint firstItem="HYB-2S-V4b" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$FiveWidthEqualsHexBaseWidth$" id="ldq-55-xxh"/>
+                                            <constraint firstItem="uxG-Mx-Zkd" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$AdditionWidthEqualsHexBaseWidth$" id="lhH-06-jrU"/>
+                                            <constraint firstItem="81P-km-4iH" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$SubtractionWidthEqualsHexBaseWidth$" id="mCs-s8-xyj"/>
+                                            <constraint firstItem="SdO-Ga-fVd" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$TwoWidthEqualsHexBaseWidth$" id="qwQ-xM-eCf"/>
+                                            <constraint firstItem="W8D-4Y-Dr6" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$ThreeWidthEqualsHexBaseWidth$" id="rsz-2g-Gnk"/>
+                                            <constraint firstItem="Dea-fE-RpV" firstAttribute="height" secondItem="Zwa-2C-92c" secondAttribute="height" identifier="$AboutStackHeightEqualsHexStackHeight$" id="unC-7w-dc3"/>
+                                            <constraint firstItem="z3K-Pj-trg" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$NotWidthEqualsHexBaseWidth$" id="vsS-9K-i7Y"/>
+                                            <constraint firstItem="UKy-vj-BKU" firstAttribute="width" secondItem="kUV-M0-bPz" secondAttribute="width" identifier="$ModuloWidthEqualsHexBaseWidth$" id="xN5-aa-3Sq"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="V5y-Mw-c8R" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" id="1Sc-lg-aaO"/>
-                                    <constraint firstAttribute="trailing" secondItem="V5y-Mw-c8R" secondAttribute="trailing" id="4TB-oI-Vaq"/>
-                                    <constraint firstItem="bHU-fX-rJj" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" id="FK7-BZ-ZQa"/>
-                                    <constraint firstAttribute="trailing" secondItem="bHU-fX-rJj" secondAttribute="trailing" id="NbP-hb-Q4L"/>
-                                    <constraint firstAttribute="trailing" secondItem="mmn-qu-mlf" secondAttribute="trailing" id="Slf-1k-YJq"/>
-                                    <constraint firstItem="mmn-qu-mlf" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" id="b80-rX-X08"/>
-                                    <constraint firstItem="Zwa-2C-92c" firstAttribute="height" secondItem="bHU-fX-rJj" secondAttribute="height" id="bgh-S5-bZ2"/>
-                                    <constraint firstItem="V5y-Mw-c8R" firstAttribute="top" secondItem="dTN-K5-1G6" secondAttribute="top" id="jZH-Sn-WHs"/>
+                                    <constraint firstItem="V5y-Mw-c8R" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" identifier="$ViewLeadingEqualsSuperviewLeading$" id="1Sc-lg-aaO"/>
+                                    <constraint firstAttribute="trailing" secondItem="V5y-Mw-c8R" secondAttribute="trailing" identifier="$SuperviewTrailingEqualViewTrailing$" id="4TB-oI-Vaq"/>
+                                    <constraint firstItem="bHU-fX-rJj" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" identifier="$CalculationLeadingEqualsSuperviewLeading$" id="FK7-BZ-ZQa"/>
+                                    <constraint firstAttribute="trailing" secondItem="bHU-fX-rJj" secondAttribute="trailing" identifier="$SuperviewTrailingEqualCalculationDisplayTrailing$" id="NbP-hb-Q4L"/>
+                                    <constraint firstAttribute="trailing" secondItem="mmn-qu-mlf" secondAttribute="trailing" identifier="$SuperviewTrailingEqualStackViewTrailing$" id="Slf-1k-YJq"/>
+                                    <constraint firstItem="mmn-qu-mlf" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" identifier="$StackViewLeadingEqualSuperviewLeading$" id="b80-rX-X08"/>
+                                    <constraint firstItem="Zwa-2C-92c" firstAttribute="height" secondItem="bHU-fX-rJj" secondAttribute="height" identifier="$StackViewHeightEqualCalculatorDisplayHeight$" id="bgh-S5-bZ2"/>
+                                    <constraint firstItem="V5y-Mw-c8R" firstAttribute="top" secondItem="dTN-K5-1G6" secondAttribute="top" identifier="$ViewTopEqualSuperviewTop$" id="jZH-Sn-WHs"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dTN-K5-1G6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ctc-MG-68r"/>
-                            <constraint firstItem="dTN-K5-1G6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SAb-dd-yen"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dTN-K5-1G6" secondAttribute="bottom" constant="-34" id="vlQ-ug-txv"/>
-                            <constraint firstItem="dTN-K5-1G6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zvW-Xp-IM2"/>
+                            <constraint firstItem="dTN-K5-1G6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" identifier="$StackViewTrailingEqualSafeAreaTrailing$" id="Ctc-MG-68r"/>
+                            <constraint firstItem="dTN-K5-1G6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" identifier="$StackViewLeadingEqualSafeAreaLeading$" id="SAb-dd-yen"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dTN-K5-1G6" secondAttribute="bottom" constant="-34" identifier="$SafeAreaBottomEqualStackViewBottom$" id="vlQ-ug-txv"/>
+                            <constraint firstItem="dTN-K5-1G6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" identifier="$StackViewTopEqualSuperviewTop$" id="zvW-Xp-IM2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -472,16 +469,17 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="About" id="giW-xd-wPT">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="vDv-Jx-jae">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="vDv-Jx-jae">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="kME-FV-ahr">
-                                                <rect key="frame" x="16" y="19" width="93" height="18"/>
+                                                <rect key="frame" x="15.999999999999996" y="19" width="46.666666666666657" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Back">
                                                             <attributes>
+                                                                <color key="NSColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="15"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -491,12 +489,13 @@
                                                     <action selector="dismissViewWith_sender:" destination="bi5-bt-lIg" eventType="touchUpInside" id="Z7q-gC-lbz"/>
                                                 </connections>
                                             </button>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18T-Bc-HyI">
-                                <rect key="frame" x="124" y="380" width="143" height="30"/>
+                                <rect key="frame" x="123" y="380" width="144" height="30"/>
                                 <state key="normal" title="github.com/saechaol"/>
                                 <connections>
                                     <action selector="launchPageWith_sender:" destination="bi5-bt-lIg" eventType="touchUpInside" id="Q47-iV-ZUA"/>
@@ -506,9 +505,10 @@
                         <viewLayoutGuide key="safeArea" id="dAk-hk-Ql5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="18T-Bc-HyI" firstAttribute="leading" secondItem="dAk-hk-Ql5" secondAttribute="leading" constant="124" id="TrF-yh-Rn8"/>
+                            <constraint firstItem="18T-Bc-HyI" firstAttribute="centerY" secondItem="48D-SK-uqj" secondAttribute="centerY" id="Xm1-wT-S0a"/>
+                            <constraint firstItem="18T-Bc-HyI" firstAttribute="centerX" secondItem="jfS-fs-tNW" secondAttribute="centerX" id="Zu6-Uc-8Cd"/>
+                            <constraint firstItem="18T-Bc-HyI" firstAttribute="leading" secondItem="dAk-hk-Ql5" secondAttribute="leading" constant="123" id="ku0-8O-cIZ"/>
                             <constraint firstItem="jfS-fs-tNW" firstAttribute="centerX" secondItem="48D-SK-uqj" secondAttribute="centerX" id="nNz-de-zUq"/>
-                            <constraint firstItem="18T-Bc-HyI" firstAttribute="centerY" secondItem="48D-SK-uqj" secondAttribute="centerY" id="ppV-A8-LTU"/>
                             <constraint firstItem="jfS-fs-tNW" firstAttribute="top" secondItem="dAk-hk-Ql5" secondAttribute="top" id="tps-m6-Y39"/>
                             <constraint firstItem="jfS-fs-tNW" firstAttribute="leading" secondItem="dAk-hk-Ql5" secondAttribute="leading" id="zy9-CX-Nao"/>
                         </constraints>
@@ -517,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deM-t1-gcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="-36"/>
+            <point key="canvasLocation" x="736.92307692307691" y="-36.255924170616112"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
