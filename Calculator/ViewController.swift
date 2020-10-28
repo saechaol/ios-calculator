@@ -20,12 +20,59 @@ class ViewController: UIViewController {
     var base: Base!
     var operationPerformed: Bool! = false
     
+    // Initialize Interface Builder outlets
     @IBOutlet weak var calculationDisplay: UILabel!
     
     @IBOutlet weak var HexBaseButton: UIButton!
     @IBOutlet weak var DecBaseButton: UIButton!
     @IBOutlet weak var OctBaseButton: UIButton!
     @IBOutlet weak var BinBaseButton: UIButton!
+    @IBOutlet weak var AllClearButton: UIButton!
+    
+    @IBOutlet weak var HexDButton: UIButton!
+    @IBOutlet weak var HexEButton: UIButton!
+    @IBOutlet weak var HexFButton: UIButton!
+    @IBOutlet weak var DeleteButton: UIButton!
+    @IBOutlet weak var AboutButton: UIButton!
+    
+    @IBOutlet weak var HexAButton: UIButton!
+    @IBOutlet weak var HexBButton: UIButton!
+    @IBOutlet weak var HexCButton: UIButton!
+    @IBOutlet weak var ModuloButton: UIButton!
+    @IBOutlet weak var DivisionButton: UIButton!
+    
+    @IBOutlet weak var IntSevenButton: UIButton!
+    @IBOutlet weak var IntEightButton: UIButton!
+    @IBOutlet weak var IntNineButton: UIButton!
+    @IBOutlet weak var AndButton: UIButton!
+    @IBOutlet weak var MultiplicationButton: UIButton!
+    
+    @IBOutlet weak var IntFourButton: UIButton!
+    @IBOutlet weak var IntFiveButton: UIButton!
+    @IBOutlet weak var IntSixButton: UIButton!
+    @IBOutlet weak var OrButton: UIButton!
+    @IBOutlet weak var SubtractionButton: UIButton!
+    
+    @IBOutlet weak var IntOneButton: UIButton!
+    @IBOutlet weak var IntTwoButton: UIButton!
+    @IBOutlet weak var IntThreeButton: UIButton!
+    @IBOutlet weak var XorButton: UIButton!
+    @IBOutlet weak var AdditionButton: UIButton!
+    
+    @IBOutlet weak var IntZeroButton: UIButton!
+    @IBOutlet weak var NegationButton: UIButton!
+    @IBOutlet weak var NotButton: UIButton!
+    @IBOutlet weak var SolveButton: UIButton!
+    
+    
+    /*
+     DEF DEL About
+     ABC MOD Div
+     789 AND Mul
+     456  OR Sub
+     123 XOR Add
+       0 Neg Solve
+     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
