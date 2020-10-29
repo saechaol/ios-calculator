@@ -13,46 +13,46 @@ class ViewController: UIViewController {
     @IBOutlet weak var calculationDisplay: PaddedLabel!
     @IBOutlet weak var lastCalculationDisplay: PaddedLabel!
     
-    @IBOutlet weak var HexBaseButton: UIButton!
-    @IBOutlet weak var DecBaseButton: UIButton!
-    @IBOutlet weak var OctBaseButton: UIButton!
-    @IBOutlet weak var BinBaseButton: UIButton!
-    @IBOutlet weak var AllClearButton: UIButton!
+    @IBOutlet weak var hexBaseButton: UIButton!
+    @IBOutlet weak var decBaseButton: UIButton!
+    @IBOutlet weak var octBaseButton: UIButton!
+    @IBOutlet weak var binBaseButton: UIButton!
+    @IBOutlet weak var allClearButton: UIButton!
     
-    @IBOutlet weak var HexDButton: UIButton!
-    @IBOutlet weak var HexEButton: UIButton!
-    @IBOutlet weak var HexFButton: UIButton!
-    @IBOutlet weak var DeleteButton: UIButton!
-    @IBOutlet weak var AboutButton: UIButton!
+    @IBOutlet weak var hexDButton: UIButton!
+    @IBOutlet weak var hexEButton: UIButton!
+    @IBOutlet weak var hexFButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var aboutButton: UIButton!
     
-    @IBOutlet weak var HexAButton: UIButton!
-    @IBOutlet weak var HexBButton: UIButton!
-    @IBOutlet weak var HexCButton: UIButton!
-    @IBOutlet weak var ModuloButton: UIButton!
-    @IBOutlet weak var DivisionButton: UIButton!
+    @IBOutlet weak var hexAButton: UIButton!
+    @IBOutlet weak var hexBButton: UIButton!
+    @IBOutlet weak var hexCButton: UIButton!
+    @IBOutlet weak var moduloButton: UIButton!
+    @IBOutlet weak var divisionButton: UIButton!
     
-    @IBOutlet weak var IntSevenButton: UIButton!
-    @IBOutlet weak var IntEightButton: UIButton!
-    @IBOutlet weak var IntNineButton: UIButton!
-    @IBOutlet weak var AndButton: UIButton!
-    @IBOutlet weak var MultiplicationButton: UIButton!
+    @IBOutlet weak var intSevenButton: UIButton!
+    @IBOutlet weak var intEightButton: UIButton!
+    @IBOutlet weak var intNineButton: UIButton!
+    @IBOutlet weak var andButton: UIButton!
+    @IBOutlet weak var multiplicationButton: UIButton!
     
-    @IBOutlet weak var IntFourButton: UIButton!
-    @IBOutlet weak var IntFiveButton: UIButton!
-    @IBOutlet weak var IntSixButton: UIButton!
-    @IBOutlet weak var OrButton: UIButton!
-    @IBOutlet weak var SubtractionButton: UIButton!
+    @IBOutlet weak var intFourButton: UIButton!
+    @IBOutlet weak var intFiveButton: UIButton!
+    @IBOutlet weak var intSixButton: UIButton!
+    @IBOutlet weak var orButton: UIButton!
+    @IBOutlet weak var subtractionButton: UIButton!
     
-    @IBOutlet weak var IntOneButton: UIButton!
-    @IBOutlet weak var IntTwoButton: UIButton!
-    @IBOutlet weak var IntThreeButton: UIButton!
-    @IBOutlet weak var XorButton: UIButton!
-    @IBOutlet weak var AdditionButton: UIButton!
+    @IBOutlet weak var intOneButton: UIButton!
+    @IBOutlet weak var intTwoButton: UIButton!
+    @IBOutlet weak var intThreeButton: UIButton!
+    @IBOutlet weak var xorButton: UIButton!
+    @IBOutlet weak var additionButton: UIButton!
     
-    @IBOutlet weak var IntZeroButton: UIButton!
-    @IBOutlet weak var NegationButton: UIButton!
-    @IBOutlet weak var NotButton: UIButton!
-    @IBOutlet weak var SolveButton: UIButton!
+    @IBOutlet weak var intZeroButton: UIButton!
+    @IBOutlet weak var negationButton: UIButton!
+    @IBOutlet weak var notButton: UIButton!
+    @IBOutlet weak var solveButton: UIButton!
     
     let highlightedButtonColor: UIColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
     let regularButtonColor: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
@@ -83,8 +83,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         base = .DECIMAL
-        DecBaseButton.backgroundColor = highlightedButtonColor
-        DecBaseButton.isSelected = true
+        decBaseButton.backgroundColor = highlightedButtonColor
+        decBaseButton.isSelected = true
         calculationDisplay.text = "0"
         firstOperand = "0"
         
@@ -177,13 +177,13 @@ class ViewController: UIViewController {
         switch base {
         case .DECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .DECIMAL)
-            buttonSwitch(fromButton: DecBaseButton, toButton: HexBaseButton)
+            buttonSwitch(fromButton: decBaseButton, toButton: hexBaseButton)
         case .OCTAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .OCTAL)
-            buttonSwitch(fromButton: OctBaseButton, toButton: HexBaseButton)
+            buttonSwitch(fromButton: octBaseButton, toButton: hexBaseButton)
         case .BINARY:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .BINARY)
-            buttonSwitch(fromButton: BinBaseButton, toButton: HexBaseButton)
+            buttonSwitch(fromButton: binBaseButton, toButton: hexBaseButton)
         case .HEXADECIMAL:
             base = .HEXADECIMAL
         default:
@@ -201,13 +201,13 @@ class ViewController: UIViewController {
         switch base {
         case .HEXADECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .DECIMAL, from: .HEXADECIMAL)
-            buttonSwitch(fromButton: HexBaseButton, toButton: DecBaseButton)
+            buttonSwitch(fromButton: hexBaseButton, toButton: decBaseButton)
         case .OCTAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .DECIMAL, from: .OCTAL)
-            buttonSwitch(fromButton: OctBaseButton, toButton: DecBaseButton)
+            buttonSwitch(fromButton: octBaseButton, toButton: decBaseButton)
         case .BINARY:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .DECIMAL, from: .BINARY)
-            buttonSwitch(fromButton: BinBaseButton, toButton: DecBaseButton)
+            buttonSwitch(fromButton: binBaseButton, toButton: decBaseButton)
         case .DECIMAL:
             base = .DECIMAL
         default:
@@ -225,13 +225,13 @@ class ViewController: UIViewController {
         switch base {
         case .HEXADECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .OCTAL, from: .HEXADECIMAL)
-            buttonSwitch(fromButton: HexBaseButton, toButton: OctBaseButton)
+            buttonSwitch(fromButton: hexBaseButton, toButton: octBaseButton)
         case .DECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .OCTAL, from: .DECIMAL)
-            buttonSwitch(fromButton: DecBaseButton, toButton: OctBaseButton)
+            buttonSwitch(fromButton: decBaseButton, toButton: octBaseButton)
         case .BINARY:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .OCTAL, from: .BINARY)
-            buttonSwitch(fromButton: BinBaseButton, toButton: OctBaseButton)
+            buttonSwitch(fromButton: binBaseButton, toButton: octBaseButton)
         case .OCTAL:
             base = .OCTAL
         default:
@@ -249,13 +249,13 @@ class ViewController: UIViewController {
         switch base {
         case .HEXADECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .BINARY, from: .HEXADECIMAL)
-            buttonSwitch(fromButton: HexBaseButton, toButton: BinBaseButton)
+            buttonSwitch(fromButton: hexBaseButton, toButton: binBaseButton)
         case .DECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .BINARY, from: .DECIMAL)
-            buttonSwitch(fromButton: DecBaseButton, toButton: BinBaseButton)
+            buttonSwitch(fromButton: decBaseButton, toButton: binBaseButton)
         case .OCTAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .BINARY, from: .OCTAL)
-            buttonSwitch(fromButton: OctBaseButton, toButton: BinBaseButton)
+            buttonSwitch(fromButton: octBaseButton, toButton: binBaseButton)
         case .BINARY:
             base = .BINARY
         default:
@@ -268,30 +268,39 @@ class ViewController: UIViewController {
         disableBinaryButtonActions()
     }
     
+    @IBAction func allClearPressed(_ sender: Any) {
+        disableButtonHighlights()
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.delete(calcDisplay: calculationDisplay)
+    }
+    
     /**
      # setTitleColors()
      Called by **viewDidLoad()** to initialize UIButton titles based on their button states.
      */
     func setTitleColors() {
-        HexBaseButton.setTitleColor(whiteColor, for: .selected)
-        DecBaseButton.setTitleColor(whiteColor, for: .selected)
-        BinBaseButton.setTitleColor(whiteColor, for: .selected)
-        OctBaseButton.setTitleColor(whiteColor, for: .selected)
-        
-        IntTwoButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntThreeButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntFourButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntFiveButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntSixButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntSevenButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntEightButton.setTitleColor(disabledButtonColor, for: .disabled)
-        IntNineButton.setTitleColor(disabledButtonColor, for: .disabled)
-        HexAButton.setTitleColor(disabledButtonColor, for: .disabled)
-        HexBButton.setTitleColor(disabledButtonColor, for: .disabled)
-        HexCButton.setTitleColor(disabledButtonColor, for: .disabled)
-        HexDButton.setTitleColor(disabledButtonColor, for: .disabled)
-        HexEButton.setTitleColor(disabledButtonColor, for: .disabled)
-        HexFButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexBaseButton.setTitleColor(whiteColor, for: .selected)
+        decBaseButton.setTitleColor(whiteColor, for: .selected)
+        binBaseButton.setTitleColor(whiteColor, for: .selected)
+        octBaseButton.setTitleColor(whiteColor, for: .selected)
+        intTwoButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intThreeButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intFourButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intFiveButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intSixButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intSevenButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intEightButton.setTitleColor(disabledButtonColor, for: .disabled)
+        intNineButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexAButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexBButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexCButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexDButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexEButton.setTitleColor(disabledButtonColor, for: .disabled)
+        hexFButton.setTitleColor(disabledButtonColor, for: .disabled)
     }
     
     /**
@@ -299,20 +308,20 @@ class ViewController: UIViewController {
      Reinitializes the enable state of all buttons
      */
     func enableButtonActions() {
-        IntTwoButton.isEnabled = true
-        IntThreeButton.isEnabled = true
-        IntFourButton.isEnabled = true
-        IntFiveButton.isEnabled = true
-        IntSixButton.isEnabled = true
-        IntSevenButton.isEnabled = true
-        IntEightButton.isEnabled = true
-        IntNineButton.isEnabled = true
-        HexAButton.isEnabled = true
-        HexBButton.isEnabled = true
-        HexCButton.isEnabled = true
-        HexDButton.isEnabled = true
-        HexEButton.isEnabled = true
-        HexFButton.isEnabled = true
+        intTwoButton.isEnabled = true
+        intThreeButton.isEnabled = true
+        intFourButton.isEnabled = true
+        intFiveButton.isEnabled = true
+        intSixButton.isEnabled = true
+        intSevenButton.isEnabled = true
+        intEightButton.isEnabled = true
+        intNineButton.isEnabled = true
+        hexAButton.isEnabled = true
+        hexBButton.isEnabled = true
+        hexCButton.isEnabled = true
+        hexDButton.isEnabled = true
+        hexEButton.isEnabled = true
+        hexFButton.isEnabled = true
     }
     
     /**
@@ -321,46 +330,53 @@ class ViewController: UIViewController {
      */
     func disableDecimalButtonActions() {
         enableButtonActions()
-        HexAButton.isEnabled = false
-        HexBButton.isEnabled = false
-        HexCButton.isEnabled = false
-        HexDButton.isEnabled = false
-        HexEButton.isEnabled = false
-        HexFButton.isEnabled = false
+        hexAButton.isEnabled = false
+        hexBButton.isEnabled = false
+        hexCButton.isEnabled = false
+        hexDButton.isEnabled = false
+        hexEButton.isEnabled = false
+        hexFButton.isEnabled = false
     }
     
     func disableBinaryButtonActions() {
         enableButtonActions()
-        IntTwoButton.isEnabled = false
-        IntThreeButton.isEnabled = false
-        IntFourButton.isEnabled = false
-        IntFiveButton.isEnabled = false
-        IntSixButton.isEnabled = false
-        IntSevenButton.isEnabled = false
-        IntEightButton.isEnabled = false
-        IntNineButton.isEnabled = false
-        HexAButton.isEnabled = false
-        HexBButton.isEnabled = false
-        HexCButton.isEnabled = false
-        HexDButton.isEnabled = false
-        HexEButton.isEnabled = false
-        HexFButton.isEnabled = false
+        intTwoButton.isEnabled = false
+        intThreeButton.isEnabled = false
+        intFourButton.isEnabled = false
+        intFiveButton.isEnabled = false
+        intSixButton.isEnabled = false
+        intSevenButton.isEnabled = false
+        intEightButton.isEnabled = false
+        intNineButton.isEnabled = false
+        hexAButton.isEnabled = false
+        hexBButton.isEnabled = false
+        hexCButton.isEnabled = false
+        hexDButton.isEnabled = false
+        hexEButton.isEnabled = false
+        hexFButton.isEnabled = false
     }
     
     func disableOctalButtonActions() {
         enableButtonActions()
-        IntEightButton.isEnabled = false
-        IntNineButton.isEnabled = false
-        HexAButton.isEnabled = false
-        HexBButton.isEnabled = false
-        HexCButton.isEnabled = false
-        HexDButton.isEnabled = false
-        HexEButton.isEnabled = false
-        HexFButton.isEnabled = false
+        intEightButton.isEnabled = false
+        intNineButton.isEnabled = false
+        hexAButton.isEnabled = false
+        hexBButton.isEnabled = false
+        hexCButton.isEnabled = false
+        hexDButton.isEnabled = false
+        hexEButton.isEnabled = false
+        hexFButton.isEnabled = false
     }
     
     func disableButtonHighlights() {
-        
+        additionButton.backgroundColor = operatorButtonColor
+        subtractionButton.backgroundColor = operatorButtonColor
+        multiplicationButton.backgroundColor = operatorButtonColor
+        divisionButton.backgroundColor = operatorButtonColor
+        andButton.backgroundColor = operatorButtonColor
+        orButton.backgroundColor = operatorButtonColor
+        xorButton.backgroundColor = operatorButtonColor
+        moduloButton.backgroundColor = operatorButtonColor
     }
     
     func buttonSwitch(fromButton: UIButton, toButton: UIButton) {

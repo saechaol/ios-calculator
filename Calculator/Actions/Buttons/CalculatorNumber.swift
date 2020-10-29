@@ -26,6 +26,7 @@ class CalculatorNumber {
         - calcDisplay: The current display value in the calculator.
         - operationPerformed: Indicates if a previous action has been performed.
         - input: The number to be appended.
+     Appends the input value to the calculator's display text String.
      */
     @discardableResult func wasPressed(calcDisplay: UILabel, operationPerformed: Bool, input: String) -> Bool {
         if calcDisplay.text == "0" || operationPerformed {
@@ -35,6 +36,23 @@ class CalculatorNumber {
         } else {
             calcDisplay.text?.append(input)
             return true
+        }
+    }
+    
+    /**
+    # delete(calcDisplay: UILabel)
+     - Parameters:
+        - calcDisplay: The current display value in the calculator.
+     Removes the last character from the calculator's display.
+     */
+    func delete(calcDisplay: UILabel) {
+        if var input = calcDisplay.text {
+            if input.count > 1 {
+                input.removeLast()
+                calcDisplay.text = input
+            } else {
+                calcDisplay.text = "0"
+            }
         }
     }
 }
