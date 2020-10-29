@@ -73,9 +73,9 @@ class ViewController: UIViewController {
     }
     
     /**
-        # viewDidLoad()
-            Initializes the application after the ViewController successfully loads.
-            The calculator is initialized to base 10 state, with 0 as an initial operator.
+     # viewDidLoad()
+     Initializes the application after the ViewController successfully loads.
+     The calculator is initialized to base 10 state, with 0 as an initial operator.
      */
     override func viewDidLoad() {
         // Initialize ViewController
@@ -92,8 +92,8 @@ class ViewController: UIViewController {
     }
     
     /**
-        # setTitleColors()
-            Called by **viewDidLoad()** to initialize UIButton titles based on their button states.
+     # setTitleColors()
+     Called by **viewDidLoad()** to initialize UIButton titles based on their button states.
      */
     func setTitleColors() {
         HexBaseButton.setTitleColor(whiteColor, for: .selected)
@@ -117,12 +117,39 @@ class ViewController: UIViewController {
         HexFButton.setTitleColor(disabledButtonColor, for: .disabled)
     }
     
+    /**
+     # enableButtonActions()
+     Reinitializes the enable state of all buttons
+     */
     func enableButtonActions() {
-        
+        IntTwoButton.isEnabled = true
+        IntThreeButton.isEnabled = true
+        IntFourButton.isEnabled = true
+        IntFiveButton.isEnabled = true
+        IntSixButton.isEnabled = true
+        IntSevenButton.isEnabled = true
+        IntEightButton.isEnabled = true
+        IntNineButton.isEnabled = true
+        HexAButton.isEnabled = true
+        HexBButton.isEnabled = true
+        HexCButton.isEnabled = true
+        HexDButton.isEnabled = true
+        HexEButton.isEnabled = true
+        HexFButton.isEnabled = true
     }
     
+    /**
+     # disableDecimalButtonActions()
+     Disables buttons not applicable to numbers in base 10
+     */
     func disableDecimalButtonActions() {
-        
+        enableButtonActions()
+        HexAButton.isEnabled = false
+        HexBButton.isEnabled = false
+        HexCButton.isEnabled = false
+        HexDButton.isEnabled = false
+        HexEButton.isEnabled = false
+        HexFButton.isEnabled = false
     }
     
     func disableBinaryButtonActions() {
