@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     // Initialize Interface Builder outlets
-    @IBOutlet weak var calculationDisplay: UILabel!
-    @IBOutlet weak var lastCalculationDisplay: UILabel!
+    @IBOutlet weak var calculationDisplay: PaddedLabel!
+    @IBOutlet weak var lastCalculationDisplay: PaddedLabel!
     
     @IBOutlet weak var HexBaseButton: UIButton!
     @IBOutlet weak var DecBaseButton: UIButton!

@@ -16,6 +16,7 @@
 		419F1F1C254740D500F686B4 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F1F1B254740D500F686B4 /* CalculatorTests.swift */; };
 		419F1F27254740D500F686B4 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419F1F26254740D500F686B4 /* CalculatorUITests.swift */; };
 		41F6414B25490C3E0045F91A /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F6414A25490C3E0045F91A /* AboutPageViewController.swift */; };
+		41F6415F254A53D80045F91A /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F6415E254A53D80045F91A /* PaddedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		419F1F26254740D500F686B4 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		419F1F28254740D500F686B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41F6414A25490C3E0045F91A /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
+		41F6415E254A53D80045F91A /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		419F1F03254740D200F686B4 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				41F6415D254A53BF0045F91A /* Labels */,
 				419F1F04254740D200F686B4 /* AppDelegate.swift */,
 				419F1F06254740D200F686B4 /* SceneDelegate.swift */,
 				419F1F08254740D200F686B4 /* ViewController.swift */,
@@ -129,6 +132,14 @@
 				419F1F28254740D500F686B4 /* Info.plist */,
 			);
 			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		41F6415D254A53BF0045F91A /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				41F6415E254A53D80045F91A /* PaddedLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				419F1F09254740D200F686B4 /* ViewController.swift in Sources */,
 				419F1F05254740D200F686B4 /* AppDelegate.swift in Sources */,
 				419F1F07254740D200F686B4 /* SceneDelegate.swift in Sources */,
+				41F6415F254A53D80045F91A /* PaddedLabel.swift in Sources */,
 				41F6414B25490C3E0045F91A /* AboutPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
