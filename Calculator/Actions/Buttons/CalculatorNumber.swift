@@ -28,14 +28,19 @@ class CalculatorNumber {
         - input: The number to be appended.
      Appends the input value to the calculator's display text String.
      */
-    @discardableResult func wasPressed(calcDisplay: UILabel, operationPerformed: Bool, input: String) -> Bool {
+    @discardableResult func wasPressed(calcDisplay: UILabel, lastDisplay: UILabel, operationPerformed: Bool, input: String) -> Bool {
         if calcDisplay.text == "0" || operationPerformed {
+            if operationPerformed {
+                lastDisplay.text = calcDisplay.text
+            }
             calcDisplay.text = ""
             calcDisplay.text?.append(input)
+            print(operationPerformed)
             return false
         } else {
             calcDisplay.text?.append(input)
-            return true
+            print(operationPerformed)
+            return false
         }
     }
     

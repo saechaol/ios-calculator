@@ -100,77 +100,77 @@ class ViewController: UIViewController {
     
     @IBAction func intOnePressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "1")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "1")
     }
     
     @IBAction func intTwoPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "2")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "2")
     }
     
     @IBAction func intThreePressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "3")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "3")
     }
     
     @IBAction func intFourPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "4")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "4")
     }
     
     @IBAction func intFivePressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "5")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "5")
     }
     
     @IBAction func intSixPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "6")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "6")
     }
     
     @IBAction func intSevenPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "7")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "7")
     }
     
     @IBAction func intEightPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "8")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "8")
     }
     
     @IBAction func intNinePressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "9")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "9")
     }
     
     @IBAction func hexAPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "A")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "A")
     }
     
     @IBAction func hexBPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "B")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "B")
     }
     
     @IBAction func hexCPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "C")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "C")
     }
     
     @IBAction func hexDPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "D")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "D")
     }
     
     @IBAction func hexEPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "E")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "E")
     }
     
     @IBAction func hexFPressAction(_ sender: Any) {
         let number = CalculatorNumber()
-        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "F")
+        operationPerformed = number.wasPressed(calcDisplay: calculationDisplay, lastDisplay: lastCalculationDisplay, operationPerformed: operationPerformed, input: "F")
     }
     
     @IBAction func hexBasePressAction(_ sender: Any) {
@@ -272,6 +272,7 @@ class ViewController: UIViewController {
     @IBAction func allClearPressAction(_ sender: Any) {
         disableButtonHighlights()
         calculationDisplay.text = "0"
+        lastCalculationDisplay.text = ""
     }
     
     @IBAction func deletePressAction(_ sender: Any) {
@@ -392,15 +393,22 @@ class ViewController: UIViewController {
     
     @IBAction func solveOperationPressAction(_ sender: Any) {
         let operation = CalculatorOperator()
+        if operationPerformed {
+            lastCalculationDisplay.text = calculationDisplay.text
+        }
         disableButtonHighlights()
         secondOperand = calculationDisplay.text
-        calculationDisplay.text = operation.calculateAction(operation: currentOperation, firstOperand: firstOperand, secondOperand: secondOperand)
-        if (calculationDisplay.text != "ERROR" || calculationDisplay.text != "") {
-            operationPerformed = true
+        if currentOperation != nil {
+            calculationDisplay.text = operation.calculateAction(operation: currentOperation, firstOperand: firstOperand, secondOperand: secondOperand, base: base)
+            if (calculationDisplay.text != "ERROR" || calculationDisplay.text != "") {
+                operationPerformed = true
+            } else {
+                lastCalculationDisplay.text = ""
+            }
         } else {
+            calculationDisplay.text = "0"
             lastCalculationDisplay.text = ""
         }
-        
     }
     
     /**
