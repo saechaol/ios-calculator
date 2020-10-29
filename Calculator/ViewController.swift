@@ -8,17 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let highlightedButtonColor: UIColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-    let regularButtonColor: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-    let operatorButtonColor: UIColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
-    let disabledButtonColor: UIColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
-    let whiteColor: UIColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-    
-    var firstOperand: String!
-    var secondOperand: String!
-    var base: Base!
-    var operationPerformed: Bool! = false
     
     // Initialize Interface Builder outlets
     @IBOutlet weak var calculationDisplay: UILabel!
@@ -64,6 +53,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var NotButton: UIButton!
     @IBOutlet weak var SolveButton: UIButton!
     
+    let highlightedButtonColor: UIColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+    let regularButtonColor: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+    let operatorButtonColor: UIColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+    let disabledButtonColor: UIColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
+    let whiteColor: UIColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+    
+    var firstOperand: String!
+    var secondOperand: String!
+    var base: Base!
+    var operationPerformed: Bool! = false
     var style: UIStatusBarStyle = .lightContent
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -73,11 +72,70 @@ class ViewController: UIViewController {
         return self.style
     }
     
+    /**
+        # viewDidLoad()
+            Initializes the application after the ViewController successfully loads.
+            The calculator is initialized to base 10 state, with 0 as an initial operator.
+     */
     override func viewDidLoad() {
+        // Initialize ViewController
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        base = .DECIMAL
+        DecBaseButton.backgroundColor = highlightedButtonColor
+        DecBaseButton.isSelected = true
+        calculationDisplay.text = "0"
+        firstOperand = "0"
+        
+        setTitleColors()
+        disableDecimalButtonActions()
     }
-
+    
+    /**
+        # setTitleColors()
+            Called by **viewDidLoad()** to initialize UIButton titles based on their button states.
+     */
+    func setTitleColors() {
+        HexBaseButton.setTitleColor(whiteColor, for: .selected)
+        DecBaseButton.setTitleColor(whiteColor, for: .selected)
+        BinBaseButton.setTitleColor(whiteColor, for: .selected)
+        OctBaseButton.setTitleColor(whiteColor, for: .selected)
+        
+        IntTwoButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntThreeButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntFourButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntFiveButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntSixButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntSevenButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntEightButton.setTitleColor(disabledButtonColor, for: .disabled)
+        IntNineButton.setTitleColor(disabledButtonColor, for: .disabled)
+        HexAButton.setTitleColor(disabledButtonColor, for: .disabled)
+        HexBButton.setTitleColor(disabledButtonColor, for: .disabled)
+        HexCButton.setTitleColor(disabledButtonColor, for: .disabled)
+        HexDButton.setTitleColor(disabledButtonColor, for: .disabled)
+        HexEButton.setTitleColor(disabledButtonColor, for: .disabled)
+        HexFButton.setTitleColor(disabledButtonColor, for: .disabled)
+    }
+    
+    func enableButtonActions() {
+        
+    }
+    
+    func disableDecimalButtonActions() {
+        
+    }
+    
+    func disableBinaryButtonActions() {
+        
+    }
+    
+    func disableOctalButtonActions() {
+        
+    }
+    
+    func disableButtonHighlights() {
+        
+    }
 }
 
 enum Operation {
