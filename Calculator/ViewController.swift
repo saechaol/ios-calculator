@@ -172,6 +172,102 @@ class ViewController: UIViewController {
         number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "F")
     }
     
+    @IBAction func hexBasePressAction(_ sender: Any) {
+        let baseControl = CalculatorBase()
+        switch base {
+        case .DECIMAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .DECIMAL)
+            buttonSwitch(fromButton: DecBaseButton, toButton: HexBButton)
+        case .OCTAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .OCTAL)
+            buttonSwitch(fromButton: OctBaseButton, toButton: HexBButton)
+        case .BINARY:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .BINARY)
+            buttonSwitch(fromButton: BinBaseButton, toButton: HexBButton)
+        case .HEXADECIMAL:
+            base = .HEXADECIMAL
+        default:
+            calculationDisplay.text = "ERROR"
+            lastCalculationDisplay.text = ""
+            enableButtonActions()
+            return
+        }
+        base = .HEXADECIMAL
+        enableButtonActions()
+    }
+    
+    @IBAction func decBasePressAction(_ sender: Any) {
+        let baseControl = CalculatorBase()
+        switch base {
+        case .HEXADECIMAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .DECIMAL, from: .HEXADECIMAL)
+            buttonSwitch(fromButton: HexBaseButton, toButton: DecBaseButton)
+        case .OCTAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .DECIMAL, from: .OCTAL)
+            buttonSwitch(fromButton: OctBaseButton, toButton: DecBaseButton)
+        case .BINARY:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .DECIMAL, from: .BINARY)
+            buttonSwitch(fromButton: BinBaseButton, toButton: DecBaseButton)
+        case .DECIMAL:
+            base = .DECIMAL
+        default:
+            calculationDisplay.text = "ERROR"
+            lastCalculationDisplay.text = ""
+            enableButtonActions()
+            return
+        }
+        base = .DECIMAL
+        disableDecimalButtonActions()
+    }
+    
+    @IBAction func octBasePressAction(_ sender: Any) {
+        let baseControl = CalculatorBase()
+        switch base {
+        case .HEXADECIMAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .OCTAL, from: .HEXADECIMAL)
+            buttonSwitch(fromButton: HexBaseButton, toButton: OctBaseButton)
+        case .DECIMAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .OCTAL, from: .DECIMAL)
+            buttonSwitch(fromButton: DecBaseButton, toButton: OctBaseButton)
+        case .BINARY:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .OCTAL, from: .BINARY)
+            buttonSwitch(fromButton: BinBaseButton, toButton: OctBaseButton)
+        case .OCTAL:
+            base = .OCTAL
+        default:
+            calculationDisplay.text = "ERROR"
+            lastCalculationDisplay.text = ""
+            enableButtonActions()
+            return
+        }
+        base = .OCTAL
+        disableOctalButtonActions()
+    }
+    
+    @IBAction func binBasePressAction(_ sender: Any) {
+        let baseControl = CalculatorBase()
+        switch base {
+        case .HEXADECIMAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .BINARY, from: .HEXADECIMAL)
+            buttonSwitch(fromButton: HexBaseButton, toButton: BinBaseButton)
+        case .DECIMAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .BINARY, from: .DECIMAL)
+            buttonSwitch(fromButton: DecBaseButton, toButton: BinBaseButton)
+        case .OCTAL:
+            firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .BINARY, from: .OCTAL)
+            buttonSwitch(fromButton: OctBaseButton, toButton: BinBaseButton)
+        case .BINARY:
+            base = .BINARY
+        default:
+            calculationDisplay.text = "ERROR"
+            lastCalculationDisplay.text = ""
+            enableButtonActions()
+            return
+        }
+        base = .BINARY
+        disableBinaryButtonActions()
+    }
+    
     /**
      # setTitleColors()
      Called by **viewDidLoad()** to initialize UIButton titles based on their button states.
@@ -243,6 +339,13 @@ class ViewController: UIViewController {
     
     func disableButtonHighlights() {
         
+    }
+    
+    func buttonSwitch(fromButton: UIButton, toButton: UIButton) {
+        fromButton.backgroundColor = regularButtonColor
+        fromButton.isSelected = false
+        toButton.backgroundColor = highlightedButtonColor
+        toButton.isSelected = true
     }
 }
 
