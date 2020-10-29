@@ -24,6 +24,7 @@ class CalculatorNumber {
      # wasPressed(calcDisplay: UILabel, actionPerformed: Bool, input: String)
      - Parameters:
         - calcDisplay: The current display value in the calculator.
+        - lastDisplay: The last display value in the calculator.
         - operationPerformed: Indicates if a previous action has been performed.
         - input: The number to be appended.
      Appends the input value to the calculator's display text String.

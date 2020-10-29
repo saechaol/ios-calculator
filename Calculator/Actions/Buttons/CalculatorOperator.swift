@@ -9,6 +9,15 @@ import UIKit
 
 class CalculatorOperator {
     
+    /**
+     # calculateAction(operation: Operation, firstOperand: String, secondOperant: String, base: Base)
+     - Parameters:
+        - operation: The operation to perform.
+        - firstOperand: The first operand to use in the calculation.
+        - secondOperand: The second operand to use in the calculation.
+        - base: The numerical base to perform the calculation in.
+     Calculates the value of the first operand with respect to the second operand, in the specified base.
+     */
     func calculateAction(operation: Operation, firstOperand: String, secondOperand: String, base: Base) -> String {
         var calculation = "ERROR"
         switch operation {
@@ -159,6 +168,9 @@ class CalculatorOperator {
     }
     
     func div(base: Base, x: String, y: String) -> String {
+        if y == "0" {
+            return "ERROR"
+        }
         switch base {
         case .HEXADECIMAL:
             if let intX = Int(x, radix: 16), let intY = Int(y, radix: 16) {

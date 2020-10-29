@@ -54,7 +54,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var notButton: UIButton!
     @IBOutlet weak var solveButton: UIButton!
     
-    let highlightedButtonColor: UIColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+    let highlightedBaseButtonColor: UIColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+    let highlightedOperationButtonColor: UIColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.08235294118, alpha: 1)
     let regularButtonColor: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     let operatorButtonColor: UIColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
     let disabledButtonColor: UIColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
@@ -84,8 +85,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         base = .DECIMAL
-        decBaseButton.backgroundColor = highlightedButtonColor
+        decBaseButton.backgroundColor = highlightedBaseButtonColor
         decBaseButton.isSelected = true
+        lastCalculationDisplay.text = ""
         calculationDisplay.text = "0"
         firstOperand = "0"
         
@@ -305,7 +307,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moduloOperatorPressAction(_ sender: Any) {        disableButtonHighlights()
-        moduloButton.backgroundColor = highlightedButtonColor
+        moduloButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .MODULO
         calculationDisplay.text = "0"
@@ -313,7 +315,7 @@ class ViewController: UIViewController {
     
     @IBAction func divisionOperatorPressAction(_ sender: Any) {
         disableButtonHighlights()
-        divisionButton.backgroundColor = highlightedButtonColor
+        divisionButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .DIVISION
         calculationDisplay.text = "0"
@@ -321,7 +323,7 @@ class ViewController: UIViewController {
     
     @IBAction func andOperatorPressAction(_ sender: Any) {
         disableButtonHighlights()
-        andButton.backgroundColor = highlightedButtonColor
+        andButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .AND
         calculationDisplay.text = "0"
@@ -329,7 +331,7 @@ class ViewController: UIViewController {
     
     @IBAction func multiplicationOperatorPressAction(_ sender: Any) {
         disableButtonHighlights()
-        multiplicationButton.backgroundColor = highlightedButtonColor
+        multiplicationButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .MULTIPLICATION
         calculationDisplay.text = "0"
@@ -337,7 +339,7 @@ class ViewController: UIViewController {
     
     @IBAction func orOperatorPressAction(_ sender: Any) {
         disableButtonHighlights()
-        orButton.backgroundColor = highlightedButtonColor
+        orButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .OR
         calculationDisplay.text = "0"
@@ -345,7 +347,7 @@ class ViewController: UIViewController {
     
     @IBAction func subtractionOperatorPressAction(_ sender: Any) {
         disableButtonHighlights()
-        subtractionButton.backgroundColor = highlightedButtonColor
+        subtractionButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .SUBTRACTION
         calculationDisplay.text = "0"
@@ -353,7 +355,7 @@ class ViewController: UIViewController {
     
     @IBAction func xorOperatorPressAction(_ sender: Any) {
         disableButtonHighlights()
-        xorButton.backgroundColor = highlightedButtonColor
+        xorButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .XOR
         calculationDisplay.text = "0"
@@ -361,7 +363,7 @@ class ViewController: UIViewController {
     
     @IBAction func additionOperatorAction(_ sender: Any) {
         disableButtonHighlights()
-        additionButton.backgroundColor = highlightedButtonColor
+        additionButton.backgroundColor = highlightedOperationButtonColor
         firstOperand = calculationDisplay.text
         currentOperation = .ADDITION
         calculationDisplay.text = "0"
@@ -471,6 +473,10 @@ class ViewController: UIViewController {
         hexFButton.isEnabled = false
     }
     
+    /**
+     # disableBinaryButtonActions()
+     Disables buttons not applicable to numbers in base 2
+     */
     func disableBinaryButtonActions() {
         enableButtonActions()
         intTwoButton.isEnabled = false
@@ -489,6 +495,10 @@ class ViewController: UIViewController {
         hexFButton.isEnabled = false
     }
     
+    /**
+     # disableOctalButtonActions()
+     Disables buttons not applicable to numbers in base 8
+     */
     func disableOctalButtonActions() {
         enableButtonActions()
         intEightButton.isEnabled = false
@@ -501,6 +511,10 @@ class ViewController: UIViewController {
         hexFButton.isEnabled = false
     }
     
+    /**
+     # disableButtonHighlights()
+     Toggles operator button highlights to off.
+     */
     func disableButtonHighlights() {
         additionButton.backgroundColor = operatorButtonColor
         subtractionButton.backgroundColor = operatorButtonColor
@@ -512,10 +526,17 @@ class ViewController: UIViewController {
         moduloButton.backgroundColor = operatorButtonColor
     }
     
+    /**
+     # buttonSwitch()
+     - Parameters:
+        - fromButton: The button to swap colors from.
+        - toButton: The button to swap colors to.
+    Swaps color and selection status between two buttons.
+     */
     func buttonSwitch(fromButton: UIButton, toButton: UIButton) {
         fromButton.backgroundColor = regularButtonColor
         fromButton.isSelected = false
-        toButton.backgroundColor = highlightedButtonColor
+        toButton.backgroundColor = highlightedBaseButtonColor
         toButton.isSelected = true
     }
 }
