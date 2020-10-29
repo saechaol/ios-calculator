@@ -78,7 +78,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGA-mz-O9w">
                                                         <rect key="frame" x="312" y="0.0" width="78" height="78"/>
-                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <color key="backgroundColor" red="0.41943069527682697" green="0.30000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="ABOUT">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -401,13 +401,13 @@
                                     <constraint firstAttribute="trailing" secondItem="V5y-Mw-c8R" secondAttribute="trailing" identifier="$SuperviewTrailingEqualViewTrailing$" id="4TB-oI-Vaq"/>
                                     <constraint firstAttribute="trailing" secondItem="7dI-9b-pta" secondAttribute="trailing" id="EYk-2y-Xp8"/>
                                     <constraint firstItem="bHU-fX-rJj" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" identifier="$CalculationLeadingEqualsSuperviewLeading$" id="FK7-BZ-ZQa"/>
+                                    <constraint firstItem="Zwa-2C-92c" firstAttribute="height" secondItem="7dI-9b-pta" secondAttribute="height" identifier="$StackViewHeightEqualLastCalculationDisplayHeight$" id="MhE-0M-k3J"/>
                                     <constraint firstAttribute="trailing" secondItem="bHU-fX-rJj" secondAttribute="trailing" identifier="$SuperviewTrailingEqualCalculationDisplayTrailing$" id="NbP-hb-Q4L"/>
                                     <constraint firstAttribute="trailing" secondItem="mmn-qu-mlf" secondAttribute="trailing" identifier="$SuperviewTrailingEqualStackViewTrailing$" id="Slf-1k-YJq"/>
                                     <constraint firstItem="mmn-qu-mlf" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" identifier="$StackViewLeadingEqualSuperviewLeading$" id="b80-rX-X08"/>
                                     <constraint firstItem="Zwa-2C-92c" firstAttribute="height" secondItem="bHU-fX-rJj" secondAttribute="height" identifier="$StackViewHeightEqualCalculatorDisplayHeight$" id="bgh-S5-bZ2"/>
                                     <constraint firstItem="V5y-Mw-c8R" firstAttribute="top" secondItem="dTN-K5-1G6" secondAttribute="top" identifier="$ViewTopEqualSuperviewTop$" id="jZH-Sn-WHs"/>
                                     <constraint firstItem="7dI-9b-pta" firstAttribute="leading" secondItem="dTN-K5-1G6" secondAttribute="leading" id="qIf-HD-RPk"/>
-                                    <constraint firstItem="bHU-fX-rJj" firstAttribute="height" secondItem="7dI-9b-pta" secondAttribute="height" id="wSz-Ra-Cd4"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -456,6 +456,7 @@
                         <outlet property="SubtractionButton" destination="81P-km-4iH" id="7pn-CC-TyE"/>
                         <outlet property="XorButton" destination="pHv-HT-cnP" id="keU-xK-4Jh"/>
                         <outlet property="calculationDisplay" destination="bHU-fX-rJj" id="w4N-ay-cA4"/>
+                        <outlet property="lastCalculationDisplay" destination="7dI-9b-pta" id="X79-y9-ZQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -533,9 +534,6 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
