@@ -62,6 +62,7 @@ class ViewController: UIViewController {
     
     var firstOperand: String!
     var secondOperand: String!
+    var currentOperation: Operation!
     var base: Base!
     var operationPerformed: Bool! = false
     var style: UIStatusBarStyle = .lightContent
@@ -268,14 +269,138 @@ class ViewController: UIViewController {
         disableBinaryButtonActions()
     }
     
-    @IBAction func allClearPressed(_ sender: Any) {
+    @IBAction func allClearPressAction(_ sender: Any) {
         disableButtonHighlights()
         calculationDisplay.text = "0"
     }
     
-    @IBAction func deletePressed(_ sender: Any) {
+    @IBAction func deletePressAction(_ sender: Any) {
         let number = CalculatorNumber()
         number.delete(calcDisplay: calculationDisplay)
+    }
+    
+    @IBAction func negationOperatorPressAction(_ sender: Any) {
+        firstOperand = calculationDisplay.text
+        switch base {
+        case .HEXADECIMAL:
+            if let value = Int(firstOperand, radix: 16) {
+                calculationDisplay.text = String(value * -1, radix: 16)
+            }
+        case .DECIMAL:
+            if let value = Int(firstOperand, radix: 10) {
+                calculationDisplay.text = "\(value * -1)"
+            }
+        case .OCTAL:
+            if let value = Int(firstOperand, radix: 8) {
+                calculationDisplay.text = String(value * -1, radix: 8)
+            }
+        case .BINARY:
+            if let value = Int(firstOperand, radix: 2) {
+                calculationDisplay.text = String(value * -1, radix: 2)
+            }
+        default:
+            calculationDisplay.text = "ERROR"
+        }
+    }
+    
+    @IBAction func moduloOperatorPressAction(_ sender: Any) {        disableButtonHighlights()
+        moduloButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .MODULO
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func divisionOperatorPressAction(_ sender: Any) {
+        disableButtonHighlights()
+        divisionButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .DIVISION
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func andOperatorPressAction(_ sender: Any) {
+        disableButtonHighlights()
+        andButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .AND
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func multiplicationOperatorPressAction(_ sender: Any) {
+        disableButtonHighlights()
+        multiplicationButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .MULTIPLICATION
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func orOperatorPressAction(_ sender: Any) {
+        disableButtonHighlights()
+        orButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .OR
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func subtractionOperatorPressAction(_ sender: Any) {
+        disableButtonHighlights()
+        subtractionButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .SUBTRACTION
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func xorOperatorPressAction(_ sender: Any) {
+        disableButtonHighlights()
+        xorButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .XOR
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func additionOperatorAction(_ sender: Any) {
+        disableButtonHighlights()
+        additionButton.backgroundColor = highlightedButtonColor
+        firstOperand = calculationDisplay.text
+        currentOperation = .ADDITION
+        calculationDisplay.text = "0"
+    }
+    
+    @IBAction func notOperatorPressAction(_ sender: Any) {
+        firstOperand = calculationDisplay.text
+        switch base {
+        case .HEXADECIMAL:
+            if let value = Int(firstOperand, radix: 16) {
+                calculationDisplay.text = String(~value, radix: 16)
+            }
+        case .DECIMAL:
+            if let value = Int(firstOperand, radix: 10) {
+                calculationDisplay.text = "\(~value)"
+            }
+        case .OCTAL:
+            if let value = Int(firstOperand, radix: 8) {
+                calculationDisplay.text = String(~value, radix: 8)
+            }
+        case .BINARY:
+            if let value = Int(firstOperand, radix: 2) {
+                calculationDisplay.text = String(~value, radix: 2)
+            }
+        default:
+            calculationDisplay.text = "ERROR"
+        }
+    }
+    
+    @IBAction func solveOperationPressAction(_ sender: Any) {
+        let operation = CalculatorOperator()
+        disableButtonHighlights()
+        secondOperand = calculationDisplay.text
+        calculationDisplay.text = operation.calculateAction(operation: currentOperation, firstOperand: firstOperand, secondOperand: secondOperand)
+        if (calculationDisplay.text != "ERROR" || calculationDisplay.text != "") {
+            operationPerformed = true
+        } else {
+            lastCalculationDisplay.text = ""
+        }
+        
     }
     
     /**
@@ -388,14 +513,14 @@ class ViewController: UIViewController {
 }
 
 enum Operation {
-    case addition
-    case subtraction
-    case division
-    case multiplication
-    case modulo
-    case and
-    case or
-    case xor
+    case ADDITION
+    case SUBTRACTION
+    case DIVISION
+    case MULTIPLICATION
+    case MODULO
+    case AND
+    case OR
+    case XOR
 }
 
 enum Base {
