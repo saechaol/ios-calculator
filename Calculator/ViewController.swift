@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var NotButton: UIButton!
     @IBOutlet weak var SolveButton: UIButton!
     
-    let highlightedButtonColor: UIColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+    let highlightedButtonColor: UIColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
     let regularButtonColor: UIColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     let operatorButtonColor: UIColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
     let disabledButtonColor: UIColor = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
@@ -90,6 +90,86 @@ class ViewController: UIViewController {
         
         setTitleColors()
         disableDecimalButtonActions()
+    }
+    
+    @IBAction func intZeroPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay)
+    }
+    
+    @IBAction func intOnePressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "1")
+    }
+    
+    @IBAction func intTwoPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "2")
+    }
+    
+    @IBAction func intThreePressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "3")
+    }
+    
+    @IBAction func intFourPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "4")
+    }
+    
+    @IBAction func intFivePressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "5")
+    }
+    
+    @IBAction func intSixPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "6")
+    }
+    
+    @IBAction func intSevenPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "7")
+    }
+    
+    @IBAction func intEightPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "8")
+    }
+    
+    @IBAction func intNinePressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "9")
+    }
+    
+    @IBAction func hexAPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "A")
+    }
+    
+    @IBAction func hexBPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "B")
+    }
+    
+    @IBAction func hexCPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "C")
+    }
+    
+    @IBAction func hexDPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "D")
+    }
+    
+    @IBAction func hexEPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "E")
+    }
+    
+    @IBAction func hexFPressAction(_ sender: Any) {
+        let number = CalculatorNumber()
+        number.wasPressed(calcDisplay: calculationDisplay, operationPerformed: operationPerformed, input: "F")
     }
     
     /**
