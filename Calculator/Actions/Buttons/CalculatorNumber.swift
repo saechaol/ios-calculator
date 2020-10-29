@@ -35,11 +35,9 @@ class CalculatorNumber {
             }
             calcDisplay.text = ""
             calcDisplay.text?.append(input)
-            print(operationPerformed)
             return false
         } else {
             calcDisplay.text?.append(input)
-            print(operationPerformed)
             return false
         }
     }
