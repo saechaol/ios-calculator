@@ -330,11 +330,33 @@ class ViewController: UIViewController {
     }
     
     func disableBinaryButtonActions() {
-        
+        enableButtonActions()
+        IntTwoButton.isEnabled = false
+        IntThreeButton.isEnabled = false
+        IntFourButton.isEnabled = false
+        IntFiveButton.isEnabled = false
+        IntSixButton.isEnabled = false
+        IntSevenButton.isEnabled = false
+        IntEightButton.isEnabled = false
+        IntNineButton.isEnabled = false
+        HexAButton.isEnabled = false
+        HexBButton.isEnabled = false
+        HexCButton.isEnabled = false
+        HexDButton.isEnabled = false
+        HexEButton.isEnabled = false
+        HexFButton.isEnabled = false
     }
     
     func disableOctalButtonActions() {
-        
+        enableButtonActions()
+        IntEightButton.isEnabled = false
+        IntNineButton.isEnabled = false
+        HexAButton.isEnabled = false
+        HexBButton.isEnabled = false
+        HexCButton.isEnabled = false
+        HexDButton.isEnabled = false
+        HexEButton.isEnabled = false
+        HexFButton.isEnabled = false
     }
     
     func disableButtonHighlights() {
