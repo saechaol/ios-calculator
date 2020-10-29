@@ -177,13 +177,13 @@ class ViewController: UIViewController {
         switch base {
         case .DECIMAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .DECIMAL)
-            buttonSwitch(fromButton: DecBaseButton, toButton: HexBButton)
+            buttonSwitch(fromButton: DecBaseButton, toButton: HexBaseButton)
         case .OCTAL:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .OCTAL)
-            buttonSwitch(fromButton: OctBaseButton, toButton: HexBButton)
+            buttonSwitch(fromButton: OctBaseButton, toButton: HexBaseButton)
         case .BINARY:
             firstOperand = baseControl.wasPressed(calcDisplay: calculationDisplay, operand: firstOperand, to: .HEXADECIMAL, from: .BINARY)
-            buttonSwitch(fromButton: BinBaseButton, toButton: HexBButton)
+            buttonSwitch(fromButton: BinBaseButton, toButton: HexBaseButton)
         case .HEXADECIMAL:
             base = .HEXADECIMAL
         default:
